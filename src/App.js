@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import PokemonForm from 'Components/Pokemon/FormPokemon';
+import PokemonInfo from 'Components/Pokemon/PokemonInfo';
+
+export default class App extends Component {
+  state = {
+    pokemonName: '',
+  };
+
+  handlerFormSubmit = pokemonName => {
+    this.setState({ pokemonName });
+    // console.log(pokemonName);
+  };
+  // state = {
+  //   pokemon: null,
+  //   loading: false,
+  // };
+
+  // componentDidMount() {
+  //   this.setState({ loading: true });
+  //   setTimeout(() => {
+  //     fetch('https://pokeapi.co/api/v2/pokemon/ditto')
+  //       .then(res => res.json())
+  //       .then(pokemon => this.setState({ pokemon }))
+  //       .finally(() => this.setState({ loading: false }));
+  //   }, 2000);
+  // }
+
+  render() {
+    return (
+      <div stled={{ maxWidth: 1170, margin: '0 auto', padding: 20 }}>
+        <PokemonForm onSubmit={this.handlerFormSubmit} />
+        <PokemonInfo pokemonName={this.state.pokemonName} />
+        <ToastContainer autoClose={5000} theme="colored" />
+        {/* {this.state.loading && <h1>Загрузка....</h1>}
+        {this.state.pokemon && this.state.pokemon.name} */}
+        let num1 = 10; let num2 =12; console.log(num1,num2)
+      </div>
+    );
+  }
 }
-
-export default App;
