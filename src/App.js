@@ -37,7 +37,6 @@ export default class App extends Component {
         <ToastContainer autoClose={5000} theme="colored" />
         {/* {this.state.loading && <h1>Загрузка....</h1>}
         {this.state.pokemon && this.state.pokemon.name} */}
-        let num1 = 10; let num2 =12; console.log(num1,num2)
       </div>
     );
   }
