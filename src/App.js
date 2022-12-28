@@ -12,7 +12,7 @@ export default class App extends Component {
 
   handlerFormSubmit = pokemonName => {
     this.setState({ pokemonName });
-    // console.log(pokemonName);
+    console.log(pokemonName);
   };
   // state = {
   //   pokemon: null,
@@ -41,3 +41,22 @@ export default class App extends Component {
     );
   }
 }
+// import { useState, useEffect } from 'react';
+
+// const App = () => {
+//   const [value, setValue] = useState(0);
+
+//   useEffect(() => {
+//     document.title = `You clicked ${value} times`;
+//   });
+
+//   return (
+//     <div>
+//       <p>You clicked {value} times</p>
+//       <button onClick={() => setValue(value + 1)}>Click me</button>
+//       <button onClick={() => setValue(value - 1)}>Click me</button>
+//     </div>
+//   );
+// };
+
+// export default App;
